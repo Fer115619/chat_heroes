@@ -1,7 +1,12 @@
 
+var url = window.location.href;
+var swLocation = '/chat_heroes/sw2.js';
 
 if(navigator.serviceWorker){
-    navigator.serviceWorker.register('./sw2.js')
+    if (url.includes('localhost')) {
+        swLocation = '/sw2.js'
+    }
+    navigator.serviceWorker.register('swLocation')
 }
 
 // Referencias de jQuery
